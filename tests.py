@@ -4,7 +4,7 @@ from datetime import datetime
 from io import StringIO
 import sys
 
-from coursework import print_all_transactions
+from coursework import print_recent_transactions
 
 class TestPrintAllTransactions(unittest.TestCase):
     def setUp(self):
@@ -63,7 +63,7 @@ class TestPrintAllTransactions(unittest.TestCase):
         # Создаем StringIO для перехвата вывода
         sys.stdout = StringIO()
 
-        print_all_transactions('operations.json')
+        print_recent_transactions('operations.json')
 
         # Получаем вывод из StringIO
         output = sys.stdout.getvalue()
@@ -90,7 +90,7 @@ MasterCard 7158 30** **** 6758 -> **7895
         # Создаем StringIO для перехвата вывода
         sys.stdout = StringIO()
 
-        print_all_transactions('operations.json')
+        print_recent_transactions('operations.json')
 
         # Получаем вывод из StringIO
         output = sys.stdout.getvalue()
